@@ -35,7 +35,7 @@ public abstract class CommonEntity {
         this.updatedAt = LocalDateTime.now();
     }
 
-    @PrePersist
+    @PreUpdate
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }

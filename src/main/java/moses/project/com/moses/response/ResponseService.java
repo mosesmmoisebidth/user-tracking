@@ -1,13 +1,15 @@
-package moses.project.response;
+package moses.project.com.moses.response;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Scope;
+import org.springframework.context.annotation.ScopedProxyMode;
+import org.springframework.web.context.WebApplicationContext;
 import moses.project.com.moses.common.dtos.ResponseDto;
 import moses.project.com.moses.common.enums.EResponse;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Service
-@Scope("request")
+@Scope(value = WebApplicationContext.SCOPE_REQUEST, proxyMode = ScopedProxyMode.TARGET_CLASS)
 public class ResponseService {
     
     private final HttpServletRequest request;
